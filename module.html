@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="module.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Module exercise</h1>
+    <p>
+   14. What is the output of the following code?</p>
+    <code>const promise = new Promise((resolve, reject) => {
+reject(“Hattori”);
+});
+promise.then(val => alert(“Success: “ + val))
+.catch(e => alert(“Error: “ + e));</code>
+    <blockquote>
+        It is going to show an alert with the following message: <q>Error: Hattori</q>
+    </blockquote>
+
+<p>  15.  What is the output of the following code?</p>
+    <code>const promise = new Promise((resolve, reject) => {
+resolve("Hattori");
+setTimeout(()=> reject("Yoshi"), 500);
+});
+
+promise.then(val => alert("Success: " + val))
+.catch(e => alert("Error: " + e));</code>
+    <blockquote>
+        It is going to just show an alert with the following message: <q>Success: Hattori</q>
+    </blockquote>
+<p>
+   16. What is the output of the following code?</p>
+    <code>function job(state) {
+return new Promise(function(resolve, reject) {
+if (state) {
+    resolve('success');
+} else {
+    reject('error');
+}});
+}
+
+let promise = job(true);
+
+promise.then(function(data) {
+console.log(data);
+return job(false); })
+.catch(function(error) {
+   console.log(error);
+   return 'Error caught';
+});</code>
+    <blockquote>
+        It is going to log <q>success</q> and then <q>error</q>.
+    </blockquote>
+</li>
+</ol>
+</body>
+</html>
+</body>
+</html>
